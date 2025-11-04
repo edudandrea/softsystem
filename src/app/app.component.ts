@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faCode, faCar, faHeadset, faPlug } from '@fortawesome/free-solid-svg-icons';
+import emailjs from 'emailjs-com';
 
 @Component({
   selector: 'app-root',
@@ -46,9 +47,22 @@ export class AppComponent {
   contact = { name: '', email: '', phone: '', message: '' };
 
   submit() {
-    // aqui você integraria com backend. por enquanto mostramos alerta.
-    alert(`Obrigado ${this.contact.name || 'cliente'}! Sua mensagem foi recebida.`);
-    this.contact = { name: '', email: '', phone: '', message: '' };
-    this.menuOpen = false;
-  }
+  const templateParams = {
+    from_name: this.contact.name,
+    from_email: this.contact.email,
+    phone: this.contact.phone,
+    message: this.contact.message
+  };
+
+  emailjs.send('SEU_SERVICE_ID', 'SEU_TEMPLATE_ID', templateParams, 'SEU_USER_ID')
+    .then(() => {
+      alert('Mensagem enviada com sucesso!');
+      this.contact = { name: '', email: '', phone: '', message: '' };
+      this.menuOpen = false;
+    })
+    .catch((error) => {
+      alert('Erro ao enviar mensagem.');
+      console.error(error);
+    });
+}
 }

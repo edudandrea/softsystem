@@ -39,7 +39,7 @@ html, body {
   align-items: center;
   padding: 16px 0;
 }
-.logo-img { height: 150px; }
+.logo-img { height: 200px; }
 
 .nav {
   display: flex;
@@ -55,7 +55,7 @@ html, body {
 }
 .nav a:hover {
   background: linear-gradient(90deg, var(--accent1), var(--accent2));
-  color: #fff;
+  color: #112fd7;
 }
 
 .actions {
@@ -359,6 +359,124 @@ html, body {
   transform: scale(1.15);
   filter: drop-shadow(0 4px 10px rgba(37, 99, 235, 0.25));
 }
+
+/* ===== RESPONSIVIDADE AVANÇADA ===== */
+
+/* Tablets (até 992px) já está bem tratado, mas vamos reforçar alguns espaçamentos */
+@media (max-width: 992px) {
+  .header-row {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .hero {
+    padding: 60px 0;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .lead {
+    font-size: 16px;
+  }
+
+  .service {
+    width: 45%;
+  }
+}
+
+/* Smartphones médios (até 768px) */
+@media (max-width: 768px) {
+  .header-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero {
+    flex-direction: column;
+    padding: 50px 0;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero-ctas {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .services-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service {
+    width: 90%;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-row {
+    flex-direction: column;
+  }
+
+  .contact-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-form,
+  .contact-info {
+    width: 100%;
+  }
+
+  .logo-img {
+    height: 100px;
+  }
+}
+
+/* Smartphones pequenos (até 480px) */
+@media (max-width: 480px) {
+  html, body {
+    font-size: 15px;
+  }
+
+  .container {
+    width: 95%;
+  }
+
+  .hero h1 {
+    font-size: 24px;
+  }
+
+  .lead {
+    font-size: 14px;
+  }
+
+  .btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .service {
+    width: 100%;
+    padding: 18px;
+  }
+
+  .section-title {
+    font-size: 22px;
+  }
+
+  .footer {
+    font-size: 14px;
+  }
+}
+
 
 
 
