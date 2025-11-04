@@ -1,0 +1,364 @@
+:root {
+  --bg: #f5f8ff;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --accent1: #2563eb;
+  --accent2: #7c3aed;
+  --radius: 14px;
+  --shadow: 0 10px 30px rgba(15, 23, 36, 0.08);
+  --glass: rgba(255, 255, 255, 0.7);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: #0f1724;
+  scroll-behavior: smooth;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* HEADER */
+.header {
+  position: static;
+  top: 0;
+  z-index: 100;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+}
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+}
+.logo-img { height: 150px; }
+
+.nav {
+  display: flex;
+  gap: 20px;
+}
+.nav a {
+  text-decoration: none;
+  color: #0f1724;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+.nav a:hover {
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  color: #fff;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  padding: 10px 20px;
+  font-weight: 100;
+  transition: 0.3s;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-primary {
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  color: #004ab3;
+  box-shadow: var(--shadow);
+}
+.btn-primary:hover {
+  transform: translateY(-3px);
+}
+.btn-ghost {
+  border: 1px solid #cfd8f3;
+  color: var(--accent1);
+}
+
+/* ICON BUTTON */
+.icon-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  color: var(--accent1);
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 80px 0;
+}
+.hero-left { flex: 1; }
+.hero-right { flex: 1; text-align: center; }
+
+.hero h1 {
+  font-size: 42px;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+.highlight {
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 700;
+}
+.lead {
+  font-size: 17px;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+.hero-ctas {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.chip {
+  background: #fff;
+  border: 1px solid #e0e7ff;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+/* MOCKUP */
+.mockup img {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* SECTIONS */
+.section { padding: 70px 0; }
+.section-title {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+
+/* SERVICES */
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+.service {
+  background: var(--card);
+  border-radius: var(--radius);
+  width: 280px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: 0.3s;
+}
+.service:hover {
+  transform: translateY(-8px);
+}
+.service i {
+  font-size: 36px;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 12px;
+}
+
+/* PORTFOLIO */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-body h4 {
+  margin: 0.5rem 0;
+  color: var(--accent1);
+}
+
+.card-body p {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: 0.3s;
+}
+.card:hover {
+  transform: translateY(-6px);
+}
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.card-body {
+  padding: 16px;
+}
+
+/* ABOUT */
+.about-row {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.about-text { flex: 1; }
+.about-visual { flex: 1; }
+.about-visual img {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.about-text ul {
+  margin-top: 14px;
+  list-style: none;
+}
+.about-text li::before {
+  content: "✔";
+  color: var(--accent1);
+  margin-right: 8px;
+}
+
+/* CONTACT */
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+.contact-form, .contact-info {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+.contact-form {
+  width: 420px;
+}
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  border: 1px solid #e0e7ff;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+  font-family: inherit;
+}
+.contact-info {
+  width: 300px;
+}
+.contact-info p {
+  margin: 10px 0;
+  color: var(--muted);
+}
+.contact-info i {
+  color: var(--accent1);
+  margin-right: 8px;
+}
+
+/* FOOTER */
+.footer {
+  background: #0f1724;
+  color: #d1d5db;
+  text-align: center;
+  padding: 28px 0;
+  margin-top: 40px;
+}
+.footer .highlight {
+  color: var(--accent1);
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .nav {
+    display: none;
+  }
+  .icon-btn {
+    display: inline-block;
+  }
+  .actions .btn-primary {
+    display: none;
+  }
+  .about-row {
+    flex-direction: column;
+  }
+}
+
+/* === Estilo dos ícones dos serviços === */
+.service fa-icon,
+.service i {
+  font-size: 42px;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 12px;
+  display: inline-block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+.service:hover fa-icon,
+.service:hover i {
+  transform: scale(1.15);
+  filter: drop-shadow(0 4px 10px rgba(37, 99, 235, 0.25));
+}
+
+
+
