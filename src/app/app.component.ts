@@ -19,6 +19,14 @@ export class AppComponent {
   }
   menuOpen = false;
 
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
+
+  fecharMenu() {
+    this.menuOpen = false;
+  }
+  
   services = [
     {
       title: 'Desenvolvimento Web',
@@ -44,15 +52,15 @@ export class AppComponent {
 
   portfolio = [
     {
-      nome: 'Sistema de Gestão Para Podologia e Estética',
+      nome: 'Sistema de Gestão',
       descricao:
-        'Plataforma web completa para controle de atendimentos, agendamentos e relatórios financeiros.',
+        'Plataforma web completa para controle de atendimentos, agendamentos e relatórios financeiros. Ideal para estéticas, salões de beleza e clínicas.',
       imagem: 'assets/portfolio/ak.png',
     },
     {
       nome: 'Dashboard de Concessionária',
       descricao:
-        'Painel interativo personalizado com indicadores de vendas e performance de revendedores.',
+        'Painel interativo personalizado com indicadores de vendas e performance de revendedores conectado ao ERP e corporativo personalizado.',
       imagem: 'assets/portfolio/conc.png',
     },
     {
@@ -62,9 +70,9 @@ export class AppComponent {
       imagem: 'assets/portfolio/suporte.png',
     },
     {
-      nome: 'Integração ERP & API Financeira',
+      nome: 'Integração ERP & API',
       descricao:
-        'Integração segura entre ERP corporativo e APIs de instituições financeiras.',
+        'Integração segura entre ERP corporativo e APIs de terceiros.',
       imagem: 'assets/portfolio/erp.png',
     },
   ];

@@ -1,21 +1,22 @@
 <header class="header">
   <div class="container header-row">
-    <div class="brand">
-      <img src="assets/Logo.png" alt="D'SoftSystem" class="logo-img">
-    </div>
+    <img src="assets/Logo.png" alt="Logo" class="logo-img" />
 
-    <nav class="nav" [class.open]="menuOpen">
-      <a href="#home" (click)="menuOpen=!menuOpen">Início</a>
-      <a href="#services" (click)="menuOpen= !menuOpen">Serviços</a>
-      <a href="#portfolio" (click)="menuOpen=!menuOpen">Portfólio</a>
-      <a href="#about" (click)="menuOpen=!menuOpen">Sobre</a>
+    <!-- Botão hamburguer -->
+    <button class="icon-btn" (click)="toggleMenu()">
+      <i class="fa-solid" [ngClass]="menuOpen ? 'fa-xmark' : 'fa-bars'"></i>
+    </button>
+
+    <!-- Menu de navegação -->
+    <nav class="nav" [class.active]="menuOpen">
+      <a href="#home" (click)="fecharMenu()">Início</a>
+      <a href="#services" (click)="fecharMenu()">Serviços</a>
+      <a href="#about" (click)="fecharMenu()">Sobre</a>
+      <a href="#contact" (click)="fecharMenu()">Contato</a>
     </nav>
 
     <div class="actions">
-      <a href="#contact" class="btn btn-primary">Solicite Orçamento</a>
-      <button class="icon-btn" (click)="menuOpen = !menuOpen" aria-label="Abrir menu">
-        <i class="fa-solid" [ngClass]="menuOpen ? 'fa-xmark' : 'fa-bars'"></i>
-      </button>
+      <a href="#contact" class="btn btn-primary">Fale Conosco</a>
     </div>
   </div>
 </header>
@@ -24,11 +25,21 @@
   <!-- HERO -->
   <section id="home" class="hero container fade-up">
     <div class="hero-left">
-      <h1>Transformamos dados e processos em soluções digitais inteligentes</h1>
+      <h1>Impulsionamos ideias, aceleramos resultados.</h1>
       <p class="lead">
-        Desenvolvimento web, suporte técnico e integrações corporativas.
-        Aceleramos o crescimento do seu negócio com tecnologia de ponta.
-      </p>      
+        Na D' Soft System, acreditamos que tecnologia é o motor da inovação.
+        Atuamos no desenvolvimento de soluções web inteligentes, suporte técnico
+        especializado e integrações corporativas que permitem que startups e
+        empresas inovadoras cresçam com agilidade, segurança e escalabilidade.
+        Com uma equipe experiente e apaixonada por inovação, transformamos
+        conceitos em plataformas digitais modernas, conectando sistemas,
+        automatizando processos e criando experiências que realmente fazem a
+        diferença. Nosso propósito é simples: tornar a tecnologia um diferencial
+        competitivo para o seu negócio. Seja para lançar um novo produto
+        digital, integrar seus sistemas ou escalar sua operação, estamos prontos
+        para construir soluções que evoluem junto com a sua startup. D' Soft
+        System — tecnologia que inspira, conecta e transforma.
+      </p>
       <div class="trust">
         <span class="chip">Atendimento corporativo</span>
         <span class="chip">SLA personalizado</span>
@@ -39,7 +50,7 @@
     </div>
     <div class="hero-right">
       <div class="mockup">
-        <img src="assets/img.png" alt="Mockup de sistema">
+        <img src="assets/img.png" alt="Mockup de sistema" />
       </div>
     </div>
   </section>
@@ -49,27 +60,27 @@
     <h2 class="section-title">Nossos Serviços</h2>
     <div class="services-grid">
       <div class="service" *ngFor="let s of services">
-        <fa-icon [icon]="s.icon"></fa-icon>
-        <h3>{{s.title}}</h3>
-        <p>{{s.desc}}</p>
+        <fa-icon [icon]="s.icon" class="icon"></fa-icon>
+        <h3>{{ s.title }}</h3>
+        <p>{{ s.desc }}</p>
       </div>
     </div>
   </section>
 
   <!-- PORTFÓLIO -->
   <section id="portfolio" class="section container fade-up">
-  <h2 class="section-title">Portfólio</h2>
+    <h2 class="section-title">Portfólio</h2>
 
-  <div class="portfolio-grid">
-    <div class="card" *ngFor="let p of portfolio">
-      <img [src]="p.imagem" [alt]="p.nome">
-      <div class="card-body">
-        <h4>{{ p.nome }}</h4>
-        <p>{{ p.descricao }}</p>
+    <div class="portfolio-grid">
+      <div class="card" *ngFor="let p of portfolio">
+        <img [src]="p.imagem" [alt]="p.nome" />
+        <div class="card-body">
+          <h4>{{ p.nome }}</h4>
+          <p>{{ p.descricao }}</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- ABOUT -->
   <section id="about" class="section container fade-up">
@@ -77,11 +88,22 @@
     <div class="about-row">
       <div class="about-text">
         <p>
-          Somos uma equipe de especialistas em tecnologia com experiência em soluções digitais
-          para concessionárias e empresas que buscam eficiência e inovação.
-          Nosso foco é qualidade, segurança e entrega contínua.
-          Contamos com profissionais com mais de 10 anos de experiência no mercado de TI e concessionárias.
-          Especializados nos produtos Linx DMS e outros sistemas integrados.
+          Na D’Soft System, somos movidos pela inovação e pela vontade de
+          transformar a rotina das empresas com tecnologia inteligente. Ajudamos
+          concessionárias e negócios de todos os portes a alcançarem mais
+          eficiência, produtividade e controle por meio de soluções digitais sob
+          medida. Nossa equipe é formada por especialistas com mais de 10 anos
+          de experiência no setor de TI e no mercado automotivo, com profundo
+          conhecimento em Linx DMS e outros sistemas integrados. Unimos técnica
+          e estratégia para que sua operação funcione com mais agilidade,
+          segurança e resultados reais. Aqui, cada projeto é tratado com
+          dedicação e propósito. Do diagnóstico à entrega, trabalhamos lado a
+          lado com o cliente, garantindo uma experiência completa — desde a
+          integração de sistemas até o desenvolvimento de soluções
+          personalizadas. Se o seu objetivo é modernizar processos, reduzir
+          custos e vender mais, conte com quem entende de tecnologia e vive o
+          dia a dia das concessionárias. Com a D’Soft System, sua empresa está
+          sempre um passo à frente.
         </p>
         <ul>
           <li>Arquitetura escalável e segura</li>
@@ -91,7 +113,7 @@
         </ul>
       </div>
       <div class="about-visual">
-        <img src="assets/portfolio/equipe.png" alt="Equipe D' SoftSystem">
+        <img src="assets/portfolio/equipe.png" alt="Equipe D' SoftSystem" />
       </div>
     </div>
   </section>
@@ -101,10 +123,32 @@
     <h2 class="section-title">Fale Conosco</h2>
     <div class="contact-grid">
       <form class="contact-form" (ngSubmit)="submit()">
-        <input name="name" type="text" placeholder="Nome" [(ngModel)]="contact.name" required>
-        <input name="email" type="email" placeholder="E-mail" [(ngModel)]="contact.email" required>
-        <input name="phone" type="tel" placeholder="Telefone" [(ngModel)]="contact.phone">
-        <textarea name="message" rows="6" placeholder="Mensagem" [(ngModel)]="contact.message"></textarea>
+        <input
+          name="name"
+          type="text"
+          placeholder="Nome"
+          [(ngModel)]="contact.name"
+          required
+        />
+        <input
+          name="email"
+          type="email"
+          placeholder="E-mail"
+          [(ngModel)]="contact.email"
+          required
+        />
+        <input
+          name="phone"
+          type="tel"
+          placeholder="Telefone"
+          [(ngModel)]="contact.phone"
+        />
+        <textarea
+          name="message"
+          rows="6"
+          placeholder="Mensagem"
+          [(ngModel)]="contact.message"
+        ></textarea>
         <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
       </form>
 
