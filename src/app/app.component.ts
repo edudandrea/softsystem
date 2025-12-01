@@ -25,7 +25,7 @@ export class AppComponent {
     {
       title: 'Desenvolvimento Web',
       desc: 'Aplicações modernas e APIs escaláveis visando performance e usabilidade.',
-      iiconClass: 'fa-solid fa-code',
+      iconClass: 'fa-solid fa-code',
     },
     {
       title: 'Soluções para Concessionárias',
