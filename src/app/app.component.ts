@@ -1,11 +1,4 @@
 import { Component } from '@angular/core';
-import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import {
-  faCode,
-  faCar,
-  faHeadset,
-  faPlug,
-} from '@fortawesome/free-solid-svg-icons';
 import emailjs from 'emailjs-com';
 
 @Component({
@@ -15,8 +8,8 @@ import emailjs from 'emailjs-com';
     standalone: false
 })
 export class AppComponent {
-  constructor(private library: FaIconLibrary) {
-    library.addIcons(faCode, faCar, faHeadset, faPlug);
+  constructor() {
+    
   }
   menuOpen = false;
 
@@ -32,22 +25,22 @@ export class AppComponent {
     {
       title: 'Desenvolvimento Web',
       desc: 'Aplicações modernas e APIs escaláveis visando performance e usabilidade.',
-      icon: faCode,
+      iiconClass: 'fa-solid fa-code',
     },
     {
       title: 'Soluções para Concessionárias',
       desc: 'Integração com ERPs, estoque e CRM.',
-      icon: faCar,
+      iconClass: 'fa-solid fa-car',
     },
     {
       title: 'Suporte Técnico',
       desc: 'Atendimento remoto e on-site, com SLA ajustável.',
-      icon: faHeadset,
+      iconClass: 'fa-solid fa-headset',
     },
     {
       title: 'Integrações & APIs',
       desc: 'Automatize processos conectando seus sistemas.',
-      icon: faPlug,
+      iconClass: 'fa-solid fa-plug',
     },
   ];
 
